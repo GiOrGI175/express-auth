@@ -8,7 +8,7 @@ const authRouter = Router();
 
 authRouter.post('/sign-up', async (req, res) => {
   const { firstName, lastName, userName, email, password } = req.body;
-  if (!firstName || !lastName || !userName || !email)
+  if (!firstName || !lastName || !userName || !email || !password)
     return res.status(400).json({ message: 'wrong params' });
 
   const existUser = await userModel.findOne({ email });

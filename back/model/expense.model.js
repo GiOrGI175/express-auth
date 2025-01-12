@@ -10,6 +10,7 @@ const expenseShema = new mongoose.Schema({
   price: {
     type: Number,
   },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
 });
 
 module.exports = mongoose.model('expense', expenseShema);

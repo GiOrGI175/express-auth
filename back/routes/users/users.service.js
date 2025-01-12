@@ -1,7 +1,10 @@
 const userModel = require('../../model/expense.model');
 
 const getAllUsers = async (req, res) => {
-  const users = await userModel.find().select('-password');
+  const users = await userModel
+    .find()
+    .populate('expense', 'firstName lastName userName email ')
+    .select('-password');
   res.json(users);
 };
 

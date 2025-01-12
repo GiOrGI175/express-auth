@@ -1,3 +1,5 @@
+const userModel = require('../model/user.model');
+
 const checkExistUser = async (req, res, next) => {
   const { email } = req.body;
 
