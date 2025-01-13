@@ -1,4 +1,4 @@
-const userModel = require('../../model/expense.model');
+const userModel = require('../../model/user.model');
 
 const getAllUsers = async (req, res) => {
   const users = await userModel
